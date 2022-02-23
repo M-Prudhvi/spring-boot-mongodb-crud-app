@@ -29,8 +29,8 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public List<Student> getStudentByDepartment(String department) {
         Query query = new Query();
-//        query.addCriteria(Criteria.where("department").is(department));
-        query.addCriteria(Criteria.where("department").regex(department,"E"));
+        query.addCriteria(Criteria.where("department").is(department));
+ //       query.addCriteria(Criteria.where("department").regex(department,"E"));
         return mongoTemplate.find(query, Student.class);
     }
 
